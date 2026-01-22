@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== PC: แสดง 6 คอลัมน์ ===== */
+.item {
+    width: 16.666%; /* 100 / 6 */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* ===== ทำภาพเป็นสี่เหลี่ยมจัตุรัส 1:1 บน PC ===== */
+.img-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrap img {
+    object-fit: cover;
+}
+
+/* ===== MOBILE 480px: แสดง 1 คอลัมน์ และใช้สัดส่วนจริงของภาพ ===== */
+@media screen and (max-width: 480px) {
+
+    .box {
+        flex-direction: column;
+    }
+
+    .item {
+        width: 100%;
+    }
+
+    .img-wrap {
+        aspect-ratio: auto; /* ยกเลิก 1:1 */
+        height: auto;
+        overflow: visible;
+        position: relative;
+    }
+
+    .img-wrap img {
+        object-fit: contain;
+        width: 100%;
+        height: auto !important;
+        position: relative !important;
+    }
+}

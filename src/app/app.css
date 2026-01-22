@@ -1,0 +1,601 @@
+/* ============================
+   BASE STYLE ทั่วไป
+   ============================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'TH Sarabun New', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* ป้องกันไม่ให้มีการเลื่อนแนวนอน */
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================
+   LAYOUT ทั่วไป
+   ============================ */
+
+.container-md {
+  max-width: 1140px;
+}
+
+/* Header / Navbar */
+.site-header {
+  background-color: #ffffff;
+}
+
+.navbar-brand img {
+  display: block;
+}
+
+/* Ensure logo image always shows at correct size */
+.navbar-brand img {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: contain;
+}
+
+.navbar-brand .fw-bold {
+  margin-left: 8px;
+}
+
+/* ปรับ hover navlink ให้ดูชัดแต่ไม่แรงเกินไป */
+.nav-link {
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+/* ปุ่มขนาดกลาง custom */
+.btn-medium {
+  padding: 0.55rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* ปุ่มดำที่ใช้ในปุ่มเพิ่มตะกร้า */
+.btn-black {
+  background-color: #000;
+  color: #fff;
+  border-radius: 999px;
+  border: none;
+}
+
+.btn-black:hover {
+  background-color: #212529;
+  color: #fff;
+}
+
+/* Section spacing ทั่วไป (Desktop เป็นหลัก) */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ============================
+   PRODUCT CARD & GRID
+   ============================ */
+
+.product-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.product-card .card-body {
+  padding: 0.75rem 0.75rem 0.85rem;
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ============================
+   HERO SECTION
+   ============================ */
+
+#intro {
+  background: linear-gradient(180deg, #ffffff 0, #f8f9fa 100%);
+}
+
+#intro h1 {
+  font-size: 2.4rem;
+}
+
+#intro .lead {
+  font-size: 1.05rem;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+
+footer {
+  font-size: 0.9rem;
+}
+
+footer h5,
+footer h6 {
+  font-size: 1rem;
+}
+
+/* ============================
+   COOKIE CONSENT BANNER
+   ============================ */
+
+.cookie-banner {
+  font-size: 0.85rem;
+}
+
+/* ============================
+   ERROR / NOT-FOUND / THANK-YOU
+   ============================ */
+
+.card-body pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* ============================
+   MOBILE FIRST RESPONSIVE
+   จัดเต็มสำหรับหน้าจอ < 576px
+   ============================ */
+
+@media (max-width: 575.98px) {
+  /* ลด padding แต่ละ section ให้สั้นลง */
+  section.py-4,
+  section.py-5,
+  section.py-4.py-md-5,
+  section.py-5.bg-light {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .container-md {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  /* HERO: ลดขนาดหัวข้อและช่องว่าง */
+  #intro h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #intro .lead {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #intro ul {
+    padding-left: 1.1rem;
+    font-size: 0.88rem;
+    margin-bottom: 0.9rem;
+  }
+
+  #intro .btn-medium {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+
+  #intro img {
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* Navbar brand ให้เล็กลงหน่อยบนมือถือ */
+  .navbar-brand span {
+    font-size: 0.95rem;
+  }
+
+  .navbar-brand img {
+    height: 32px !important;
+    margin-right: 6px !important;
+  }
+
+  /* ปุ่มตะกร้าบน nav เล็กลง + กว้างพอดีมือ */
+  .btn-outline-dark.position-relative.d-flex.align-items-center {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  /* PRODUCT GRID บนมือถือ */
+  .product-content {
+    row-gap: 0.9rem;
+  }
+
+  .product-card {
+    border-radius: 12px;
+  }
+
+  .product-card .card-body {
+    padding: 0.65rem 0.6rem 0.7rem;
+  }
+
+  .product-card .card-title {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+
+  .product-card .fw-bold {
+    font-size: 0.9rem;
+  }
+
+  .product-card .btn.btn-sm {
+    padding: 0.25rem 0.55rem;
+    font-size: 0.75rem;
+  }
+
+  .product-card .btn-black {
+    border-radius: 999px;
+  }
+
+  /* Badge บนรูป */
+  .product-card .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.45rem;
+  }
+
+  /* SEARCH BOX บนหัวสินค้า */
+  #products .form-control-sm {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.55rem;
+  }
+
+  #products h2.h3 {
+    font-size: 1.15rem;
+  }
+
+  /* FAQ accordion บนมือถือ */
+  #faq .accordion-button {
+    font-size: 0.9rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  #faq .accordion-body {
+    font-size: 0.82rem;
+  }
+
+  /* CONTACT SECTION */
+  #contact h2 {
+    font-size: 1.2rem;
+  }
+
+  #contact p {
+    font-size: 0.9rem;
+  }
+
+  #contact .card-body {
+    padding: 0.85rem 0.9rem;
+  }
+
+  #contact label.form-label {
+    font-size: 0.85rem;
+  }
+
+  #contact .form-control,
+  #contact textarea {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.55rem;
+  }
+
+  /* CART PAGE */
+  .table {
+    font-size: 0.8rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.4rem 0.3rem;
+  }
+
+  .table img {
+    width: 46px !important;
+    height: 46px !important;
+    margin-right: 6px !important;
+  }
+
+  .table input.form-control-sm {
+    width: 60px !important;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.25rem;
+  }
+
+  .table .btn.btn-sm {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+  }
+
+  /* FORM ใน cart */
+  .card-body h2.h5,
+  .card-body h2.h6 {
+    font-size: 1rem;
+  }
+
+  .card-body .form-label {
+    font-size: 0.82rem;
+  }
+
+  .card-body .form-control {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .card-body .form-text,
+  .card-body .small {
+    font-size: 0.75rem;
+  }
+
+  .btn-primary.w-100 {
+    padding: 0.45rem 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  /* THANK YOU / ERROR / 404 */
+  .card-body.text-center h1.h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-body.text-center .lead {
+    font-size: 0.92rem;
+  }
+
+  .card-body.text-center p {
+    font-size: 0.86rem;
+  }
+
+  .card-body.text-center .btn {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  /* FOOTER ปรับให้เป็นแนวตั้ง อ่านง่ายบนมือถือ */
+  footer .row > div {
+    text-align: left;
+  }
+
+  footer .row {
+    row-gap: 1.2rem;
+  }
+
+  footer p,
+  footer li {
+    font-size: 0.82rem;
+  }
+
+  footer .ratio {
+    border-radius: 10px;
+  }
+
+  footer .ratio iframe {
+    border: 0;
+  }
+
+  /* COOKIE BANNER */
+  .container-md.pb-3 .card-body {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .container-md.pb-3 .card-body h6 {
+    font-size: 0.9rem;
+  }
+
+  .container-md.pb-3 .card-body p {
+    font-size: 0.78rem;
+  }
+
+  .container-md.pb-3 .btn {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* ============================
+   BREAKPOINT: TABLET ~ MD
+   ============================ */
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  #intro h1 {
+    font-size: 2rem;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .product-card .card-title {
+    font-size: 0.9rem;
+  }
+
+  .product-card .btn.btn-sm {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+
+/* ============================
+   ปรับปุ่มบนมือถือให้เล็กลงแต่กดง่าย
+   ============================ */
+@media (max-width: 575.98px) {
+  /* ปุ่มหลักที่อยู่ใต้ HERO */
+  .btn-medium {
+    padding: 0.45rem 0.9rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 8px !important;
+  }
+
+  /* ปุ่ม outline */
+  .btn-outline-secondary.btn-medium {
+    padding: 0.42rem 0.85rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* ปุ่มเพิ่มลงตะกร้าภายในสินค้า */
+  .product-card .btn.btn-sm {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* ปุ่มไอคอนมุมขวาล่างของรูป (🛒) */
+  .product-card button.btn-dark.rounded-circle {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 15px !important;
+  }
+
+  /* ปุ่มบน Navbar */
+  .btn-outline-dark.position-relative.d-flex.align-items-center {
+    padding: 0.25rem 0.6rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* ปุ่มค้นหา */
+  input[type="search"].form-control-sm {
+    padding: 0.28rem 0.5rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+
+/* ============================
+   PRODUCT CARD FIX (DESKTOP + MOBILE)
+   ============================ */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card .card-title {
+  font-size: 0.95rem;
+  line-height: 1.3;
+  font-weight: 600;
+  min-height: 40px; /* บังคับให้สูงเท่ากัน */
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* แสดง 2 บรรทัด */
+  -webkit-box-orient: vertical;
+}
+
+.product-card .fw-bold {
+  font-size: 1rem;
+}
+
+.product-card .btn-black {
+  font-size: 0.85rem;
+}
+
+/* ปรับ layout ให้ base-line อยู่ล่างเท่ากัน */
+.product-card .mt-auto {
+  margin-top: auto !important;
+}
+
+/* รูปให้ขนาดเท่ากันทุกการ์ด */
+.product-image {
+  height: 260px;     /* ปรับความสูงให้สวยงาม */
+  object-fit: cover; /* ครอบภาพให้เท่ากัน */
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* spacing ทุกรายการให้เสมอกัน */
+.product-content .col-6,
+.product-content .col-md-4,
+.product-content .col-lg-3 {
+  margin-bottom: 20px;
+}
+
+/* ============================
+   REVIEWS: mobile-friendly tweaks
+   ============================ */
+
+#reviews .card-title {
+  font-size: 0.95rem;
+}
+
+#reviews .review-text {
+  font-size: 0.82rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* show up to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 575.98px) {
+  /* Slightly reduce image size in reviews for tight mobile grids */
+  #reviews .card img {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  /* make card body spacing a bit tighter on small screens */
+  #reviews .card-body {
+    padding: 0.45rem 0.45rem;
+  }
+
+  /* Reduce text sizes and tighten line-clamp for mobile */
+  #reviews .card-title {
+    font-size: 0.88rem;
+    line-height: 1.1;
+  }
+
+  #reviews .review-text {
+    font-size: 0.72rem;
+    -webkit-line-clamp: 1; /* show only 1 line on very small screens */
+    line-height: 1.1;
+  }
+}
